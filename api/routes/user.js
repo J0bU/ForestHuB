@@ -2,6 +2,9 @@
 
 const express = require('express');
 const {
+	inicioPage,
+	loginPage,
+	signupPage,
     registerUser,
     loginUser,
     getUser
@@ -13,6 +16,9 @@ const { ensureAuth } = require('../middlewares/authenticated');
 
 let api = express.Router();
 
+api.get('',  inicioPage);
+api.get('/login', loginPage);
+api.get('/signup', signupPage );
 api.post('/registerUser', registerUser); //Se creará un servicio en /registerUser
 api.post('/loginUser', loginUser);
 api.get('/getUser/:id', ensureAuth, getUser);

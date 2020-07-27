@@ -30,23 +30,52 @@ const jwt = require('../services/jwt');
 const User = require('../models/user');
 
 
+//---------- Método encargado de mostrar página de inicio ------
+
+function inicioPage(req, res){
+  return res.render('index');
+}
+
+function loginPage(req, res){
+  return res.render('login', {
+    message: req.flash('loginMessage')
+  });
+}
+
+function signupPage(req, res){
+  return res.render('signup', {
+    message: req.flash('signupMessage')
+  });
+}
+
 
 // --------- Método encargado de registrar un nuevo usuario --------
 function registerUser(req, res) {
 
   //Parámetros que viene desde la petición
   let body = req.body;
+  const errores = [];
 
+  console.log(body);
   //Validación de parámetros
   if (!(body.name && body.surname && body.nick && body.email &&
           body.password)) {
+    // Flash permite envíar mensajes al front.
+    //errores.push({texto: 'Todos los campos son necesarios'});
 
-    return res.status(412).json({
-        ok: false,
-        statusCode: 412,
-        message: "Todos los campos deben ser necesarios"
+    // return res.status(412).json({
+    //     ok: false,
+    //     statusCode: 412,
+    //     message: "Todos los campos deben ser necesarios"
+    // });
+
+    return res.render('signup', {
+      ok:false,
+      statusCode: 412,
+      message: "Todos los campos son necesarios"
     });
   }
+
 
   //Instancia modelo User: creación nuevo usuario.
   let user = new User({
@@ -61,21 +90,42 @@ function registerUser(req, res) {
   // Guardar nuevo usuario en la base de datos.
   user.save((error, usuarioDB) => {
 
-    if (error) return res.status(500).json({ok: false,statusCode: 500,error: error });
+    if (error) 
+      return res.render('signup', {
+        ok: false,
+        statusCode: 500,
+        error: error 
+      })
+      //return res.status(500).json({ok: false,statusCode: 500,error: error });
     
 
     if (usuarioDB) {
-        return res.status(200).json({
+      
+        return res.render('signup', {
           ok: true,
           statusCode: 200,
           user: usuarioDB
         });
+        // return res.status(200).json({
+        //   ok: true,
+        //   statusCode: 200,
+        //   user: usuarioDB
+        // });
+
+       
     } else {
-        return res.status(404).json({
-          ok: false,
+      //errores.push({texto: 'No se logró crear el usuario'});
+
+      return res.render('signup', {
+        ok: false,
           statusCode: 404,
           message: 'No se logró crear el usuario'
-        });
+      });
+        // return res.status(404).json({
+        //   ok: false,
+        //   statusCode: 404,
+        //   message: 'No se logró crear el usuario'
+        // });
       }
 
   });
@@ -87,7 +137,7 @@ function loginUser(req, res) {
 
   //Se obtienen las credenciales
   let body = req.body;
-
+  console.log(body.email);
   //Validación de parámetros
   if (!(body.email && body.password )) {
 
@@ -171,6 +221,9 @@ function getUser(req, res) {
 
 
 module.exports = {
+  loginPage,
+  inicioPage,
+  signupPage,
 	registerUser,
 	loginUser,
 	getUser
