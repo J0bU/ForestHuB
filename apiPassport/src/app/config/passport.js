@@ -28,7 +28,10 @@ module.exports =  (passport) =>{
 	}, function(req, email, password, done) {
      // User.findOne won't fire unless data is sent back
      
-    
+    // console.log(req);
+    // console.log(email);
+    // console.log(password);
+    // console.log(done);
     process.nextTick(function() {
 
     // find a user whose email is the same as the forms email
@@ -69,13 +72,17 @@ module.exports =  (passport) =>{
     passReqToCallback : true 
     }, function(req, email, password, done) { 
         
+        //  console.log(req);
+        // console.log(email);
+        // console.log(password);
+        // console.log(done);
         // find a user whose email is the same as the forms email
         User.findOne({ 'local.email' :  email }, function(err, user) {
         if (err)
             return done(err);
         if (!user)
             return done(null, false, req.flash('loginMessage', 'No user found.'));
-            console.log(password); // req.flash is the way to set flashdata using connect-flash;
+             // req.flash is the way to set flashdata using connect-flash;
         if (!user.validatePassword(password))
             return done(null, false, req.flash('loginMessage', 'Oops! Wrong password.')); // create the loginMessage and save it to session as flashdata
         // all is well, return successful user
