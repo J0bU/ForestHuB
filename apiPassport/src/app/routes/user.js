@@ -55,6 +55,14 @@ module.exports =  (app, passport) =>{
 		req.logout();
 		res.redirect('');
 	});
+
+	app.get('/anuncios', (req,res) => {
+		res.render('listing');
+	});	
+
+	app.get('/home', (req,res) => {
+		res.redirect('');
+	});	
 };
 
 function isLoggedIn(req, res, next) {
