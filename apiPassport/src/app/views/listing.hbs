@@ -1,46 +1,12 @@
-<!DOCTYPE html>
-<html lang="zxx">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="description" content="Directing Template" />
-    <meta name="keywords" content="Directing, unica, creative, html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Anuncios</title>
-
-    <!-- Google Font -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&display=swap"
-      rel="stylesheet"
-    />
-
-    <!-- Css Styles -->
-    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css" />
-    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css" />
-    <link rel="stylesheet" href="css/elegant-icons.css" type="text/css" />
-    <link rel="stylesheet" href="css/flaticon.css" type="text/css" />
-    <link rel="stylesheet" href="css/nice-select.css" type="text/css" />
-    <link rel="stylesheet" href="css/barfiller.css" type="text/css" />
-    <link rel="stylesheet" href="css/magnific-popup.css" type="text/css" />
-    <link rel="stylesheet" href="css/jquery-ui.min.css" type="text/css" />
-    <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css" />
-    <link rel="stylesheet" href="css/slicknav.min.css" type="text/css" />
-    <link rel="stylesheet" href="css/style.css" type="text/css" />
-  </head>
-
-  <body class="ov-hid">
-    <!-- Page Preloder -->
-    <div id="preloder">
-      <div class="loader"></div>
-    </div>
-
+ <body class="ov-hid">
+ 
     <!-- Header Section Begin -->
     <header class="header header--normal">
       <div class="container-fluid">
         <div class="row">
           <div class="col-lg-3 col-md-3">
             <div class="header__logo">
-              <a href="./index.html"
+              <a href="/"
                 ><img
                   src="./img/listing/foreslogo.png"
                   width="210"
@@ -51,18 +17,22 @@
           </div>
           <div class="col-lg-9 col-md-9">
             <div class="header__nav">
-              <nav class="header__menu mobile-menu">
-                <ul>
-                  <li><a href="./index.html">Inicio</a></li>
-                  <li class="active"><a href="./listing.html">Listing</a></li>
-                </ul>
-              </nav>
+              {{#if user}}
               <div class="header__menu__right">
                 <a href="#" class="primary-btn"
                   ><i class="fa fa-plus"></i>Publicar anuncio</a
                 >
-                <a href="#" class="login-btn"><i class="fa fa-user"></i></a>
+                <a href="/users/profile" class="login-btn"><i class="fa fa-user"></i></a>
               </div>
+             
+              {{else}}
+                <nav class="header__menu mobile-menu">
+                <ul>
+                  <li><a href="/users/signup">Register</a></li>
+                  <li><a href="/users/signin">Login</a></li>
+                </ul>
+              </nav>
+              {{/if}}
             </div>
           </div>
         </div>
@@ -467,21 +437,4 @@
       </div>
     </section>
     <!-- Listing Section End -->
-
-    <!-- Map Begin -->
-
-    <!-- Map End -->
-
-    <!-- Js Plugins -->
-    <script src="js/jquery-3.3.1.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/jquery.nice-select.min.js"></script>
-    <script src="js/jquery-ui.min.js"></script>
-    <script src="js/jquery.nicescroll.min.js"></script>
-    <script src="js/jquery.barfiller.js"></script>
-    <script src="js/jquery.magnific-popup.min.js"></script>
-    <script src="js/jquery.slicknav.js"></script>
-    <script src="js/owl.carousel.min.js"></script>
-    <script src="js/main.js"></script>
-  </body>
-</html>
+    </body>

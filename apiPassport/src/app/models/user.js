@@ -1,111 +1,164 @@
+// 'use strict'
+
+
 'use strict'
 
+const { Schema, model } = require('mongoose');
+const bcryptjs = require('bcryptjs');
+let rolesValidos = {
+        values: ['ADMIN_ROLE', 'USER_ROLE'],
+        message: '{VALUE} is not a valid role'
+    }
+
+const UserSchema = new Schema({
+    name: {
+        type: String,
+        required: true
+    },
+    // nick: {
+    //     type: String,
+    //     required: [true, "Nickname is necessary"],
+    //     unique: true
+    // },
+    email: {
+        type: String,
+        required: true,
+        unique: true
+    },
+    password: {
+        type: String,
+        required: true
+    },
+    role: {
+        type: String,
+        default: 'USER_ROLE',
+        enum: rolesValidos
+    },
+    image: {
+        type: String,
+        default: null,
+        required: false
+    }
+}, {
+    timestamps: true
+});
+
+UserSchema.methods.encryptPassword = async password => {
+    const salt = await bcryptjs.genSalt(10);
+    return await bcryptjs.hash(password, salt);
+};
+
+UserSchema.methods.matchPassword = async function (password) {
+    return await bcryptjs.compare(password, this.password);
+};
+
+module.exports = model('User', UserSchema);
 // =======================================
 // User model using Mongoose
 // ========================================
 
-const mongoose = require('mongoose');
+// const mongoose = require('mongoose');
 
-const bcrypt = require('bcrypt-nodejs');
+// const bcrypt = require('bcrypt-nodejs');
+// const bcryptjs = require('bcryptjs');
 
-const uniqueValidator = require('mongoose-unique-validator');
+// const uniqueValidator = require('mongoose-unique-validator');
 
-// define object that use mongoose
+// // define object that use mongoose
 
-let Schema = mongoose.Schema;
+// let Schema = mongoose.Schema;
 
-let rolesValidos = {
-    values: ['ADMIN_ROLE', 'USER_ROLE'],
-    message: '{VALUE} is not a valid role'
-}
+// let rolesValidos = {
+//     values: ['ADMIN_ROLE', 'USER_ROLE'],
+//     message: '{VALUE} is not a valid role'
+// }
 
-let userSchema = new Schema({
-
-
-	local: {
-
-		name: {
-        type: String,
-        required: [true, "Name is necessary"]
-	    },
-	    surname: {
-	        type: String,
-	        required: [true, 'Surname is necessary']
-	    },
-	    nick: {
-	        type: String,
-	        required: [true, "Nickname is necessary"],
-	        unique: true
-	    },
-		email: {
-			type: String,
-        	required: [true, "Email is necessary"],
-        	unique: true // Unique email in data base
-		},
-		password: {
-			type: String,
-       		required: [true, "Password is necessary"]
-       	},
-		role: {
-	        type: String,
-	        default: 'USER_ROLE',
-	        enum: rolesValidos
-    	},
-	    image: {
-	        type: String,
-	        default: null,
-	        required: false
-	    }
-	},
-
-	facebook: {
-		email: String,
-		password: String,
-		id: String,
-		token: String
-	},
-
-	twitter: {
-		email: String,
-		password: String,
-		id: String,
-		token: String
-	},
-
-	google: {
-		email: String,
-		password: String,
-		id: String,
-		token: String
-	},
+// let userSchema = new Schema({
 
 
-});
+// 	local: {
 
-userSchema.methods.generateHash = function (password) {
+// 		name: {
+//         type: String,
+//         required: [true, "Name is necessary"]
+// 	    },
+// 	    surname: {
+// 	        type: String,
+// 	        required: [true, 'Surname is necessary']
+// 	    },
+// 	    nick: {
+// 	        type: String,
+// 	        required: [true, "Nickname is necessary"],
+// 	        unique: true
+// 	    },
+// 		email: {
+// 			type: String,
+//         	required: [true, "Email is necessary"],
+//         	unique: true // Unique email in data base
+// 		},
+// 		password: {
+// 			type: String,
+//        		required: [true, "Password is necessary"]
+//        	},
+// 		role: {
+// 	        type: String,
+// 	        default: 'USER_ROLE',
+// 	        enum: rolesValidos
+//     	},
+// 	    image: {
+// 	        type: String,
+// 	        default: null,
+// 	        required: false
+// 	    }
+// 	},
 
-	return bcrypt.hashSync(password, bcrypt.genSaltSync(8), null);
-};
+// 	facebook: {
+// 		email: String,
+// 		password: String,
+// 		id: String,
+// 		token: String
+// 	},
 
-userSchema.methods.validatePassword = function (password) {
-	console.log('test' ,this.local);
-	return bcrypt.compareSync(password, this.local.password);
-}
+// 	twitter: {
+// 		email: String,
+// 		password: String,
+// 		id: String,
+// 		token: String
+// 	},
 
-userSchema.methods.toJSON = function() {
-    let user = this;
-    let userObject = user.toObject();
-    delete userObject.password;
-
-    return userObject;
-}
-
-
-// ESPECIFICACIÓN AL ESQUEMA CREADO CON UNIQUEVALIDATOR
-userSchema.plugin(uniqueValidator, {message: '{PATH} is unique'});
+// 	google: {
+// 		email: String,
+// 		password: String,
+// 		id: String,
+// 		token: String
+// 	},
 
 
-module.exports = mongoose.model('User', userSchema);
+// });
+
+// userSchema.methods.encryptPassword = async password => {
+//     const salt = await bcryptjs.genSalt(10);
+//      return await bcryptjs.hash(password, salt);
+// };
+
+// userSchema.methods.matchPassword = async function  (password) {
+//     return await bcryptjs.compare(password, this.password);
+// };
+
+// userSchema.methods.toJSON = function() {
+//     let user = this;
+//     let userObject = user.toObject();
+//     delete userObject.password;
+
+//     return userObject;
+// }
+
+
+// // ESPECIFICACIÓN AL ESQUEMA CREADO CON UNIQUEVALIDATOR
+// userSchema.plugin(uniqueValidator, {message: '{PATH} is unique'});
+
+
+// module.exports = mongoose.model('User', userSchema);
 // RolesValidos ES UNA ENUMERACIÓN QUE NOS PERMITE DEFINIR LOS ÚNICOS POSIBLES VALORES QUE TIENE
 // UN CAMPO EN UN ESQUEMA, EN NUESTRO CASO NECESITAMOS SÓLO DOS VALORES PARA EL ROL DEL USUARIO 
 // QUE SON USER_ROLE Y ADMIN_ROLE
