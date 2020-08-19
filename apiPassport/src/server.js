@@ -61,6 +61,8 @@ app.use((req, res, next) => {
 
 app.use(require('./app/routes/index.routes')); //use app.use when root file exports app.
 app.use(require('./app/routes/users.routes')); //use app.use when root file exports app.
+app.use(require('./app/routes/announcement.routes')); //use app.use when root file exports app.
+app.use(require('./app/routes/category.routes')); //use app.use when root file exports app.
 
 // ================= Static files ===============
 

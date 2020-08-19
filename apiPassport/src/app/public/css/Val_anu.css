@@ -1,0 +1,36 @@
+
+.sombra-form {
+    margin-top: 4%;
+    background: rgba(114, 105, 105, 0.685);
+}
+
+.marco-form {
+    border: #4db8ff solid 2px !important;
+    background: white;
+    border-radius: 8px;
+    padding: 4% 5%;
+    box-shadow: 0 5px 15px #555;
+}
+
+/* jquery validator */
+.error {
+    font-size: 80%;
+    color: #dc3545 !important;
+    margin-bottom: 0px !important;
+}
+
+#mapid { height: 180px; }
+
+body{
+	font-family: "Century Gothic";
+	margin: 100 px auto;
+	width: 400 px;
+}
+h1{
+	margin-bottom: 50px;
+}
+label{
+	font-size: 1em;
+	color: gray;
+}
+

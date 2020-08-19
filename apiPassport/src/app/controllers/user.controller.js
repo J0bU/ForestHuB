@@ -16,6 +16,7 @@ usersController.signup = async (req, res) => {
     
     let { name,
         email,
+        cellphone,
         password,
         password_confirmation } =  req.body;
         
@@ -25,7 +26,7 @@ usersController.signup = async (req, res) => {
         console.log('Entra password');
         errors.push({ text: 'Passwords do not match' });
     }
-    if(!email || !name || !password || !password_confirmation){
+    if(!email || !name || !cellphone || !password || !password_confirmation){
        errors.push({text: 'All fields should be fill'});
        console.log('Entra campos');
         //req.flash('error_message', {text: 'All Fields should be Fill'});
@@ -50,6 +51,7 @@ usersController.signup = async (req, res) => {
             let newUser = new User({
                 name,
                 email,
+                cellphone,
                 password
             });
 
@@ -89,8 +91,8 @@ usersController.logout = (req, res) => {
 
 usersController.renderProfile = (req, res ) => { 
     
-    let {_id, name, email, password} = req.user;
-    return res.render('users/profile', {_id,name, email, password} );
+    let {_id, name, email, cellphone, password} = req.user;
+    return res.render('users/profile', {_id,name, email, password, cellphone} );
 };
 
 module.exports = usersController;

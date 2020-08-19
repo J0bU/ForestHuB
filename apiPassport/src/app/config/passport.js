@@ -12,7 +12,7 @@ passport.use(new LocalStrategy({
     usernameField: 'email',
     passwordField: 'password'
 }, async (email, password, done) => {
-    console.log(email, password, done);
+    
     // March email's user exists
     let userDB = await User.findOne({ email: email });
 
@@ -31,7 +31,7 @@ passport.use(new LocalStrategy({
 }));
 
 passport.serializeUser((user, done) => {
-    done(null, user.id);
+    done(null, user._id);
 });
 
 passport.deserializeUser((id, done) => {

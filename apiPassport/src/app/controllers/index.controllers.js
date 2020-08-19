@@ -1,13 +1,14 @@
 'use strict'
 
 const indexController = {};
+const Announcement = require('../models/announcement');
 
-indexController.renderIndex = (req, res) => {
-    res.render('index');
-};
-
-indexController.renderAnnouncement = (req, res) => {
-    res.render('listing');
+indexController.renderIndex = async (req, res) => {
+    const announcements = await Announcement.find({state:true})
+    .populate('user', 'name')
+    .populate('category', 'name description ')
+    .sort({createdAt: 'desc'}).lean()
+    res.render('index', {announcements});
 };
 
 module.exports = indexController;

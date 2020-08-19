@@ -1,31 +1,44 @@
-{{!-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container">
-    <a class="navbar-brand" href="/">Health</a>
+
+    <a class="navbar-brand" href="/">FH</a>
+
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
       aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
+
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item active">
           <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
         </li>
-        <li class="nav-item">
+        {{!-- <li class="nav-item">
           <a class="nav-link" href="/about">About</a>
-        </li>
+        </li> --}}
       </ul>
+
       <ul class="navbar-nav ml-auto">
         {{#if user}}
+          <li class="nav-item mx-2">
+         <a href="/announcements/add" class="primary-btn"><i class="fa fa-plus"></i> Create announcement</a>
+        </li>
+        
         <div class="dropdown">
           <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
             aria-haspopup="true" aria-expanded="false">
-            Notes
+            Announcements
           </button>
+        
           <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <a class="dropdown-item" href="/notes">All Notes</a>
-            <a class="dropdown-item" href="/notes/add">Add a note</a>
+            <a class="dropdown-item" href="/announcements">All FA</a>
+            <a class="dropdown-item" href="/announcementsUser">My FA</a>
             <a class="dropdown-item" href="/users/logout">Logout</a>
           </div>
+        </div> 
+        <div class="header__menu__right">
+
+        <a href="/users/profile" class="login-btn mx-2"><i class="fa fa-user"></i></a>
         </div>
         {{else}}
         <li class="nav-item">
@@ -38,40 +51,4 @@
       </ul>
     </div>
   </div>
-</nav> --}}
-
-<!-- Header Section Begin -->
-<header class="header">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-lg-3 col-md-3">
-                <div class="header__logo">
-                    <a href="/"><img src="img/hero/abono.png" alt="" /></a>
-                </div>
-            </div>
-            <div class="col-lg-9 col-md-9">
-                <div class="header__nav ">
-                    <nav class="header__menu mobile-menu">
-                        <ul>
-                            <li class="active"><a href="/">Inicio</a></li>
-                            <li><a href="/anuncios">Listing</a></li>
-                            <li><a href="/users/signin">Login</a></li>
-                            <li><a href="/users/signup">Register</a></li>
-                              <a href="#" class="primary-btn" data-toggle="modal" data-target="#loginModal" onclick="openLoginModal();"><i class="fa fa-plus"></i> Publicar anuncio</a
-                >
-                        </ul>
-                    </nav>
-                    {{!-- ONLY REGISTER --}}
-                    {{!-- <div class="header__menu__right">
-                        <a href="#" class="primary-btn" data-toggle="modal" data-target="#loginModal"
-                            onclick="openLoginModal();"><i class="fa fa-plus"></i> Publicar anuncio</a>
-                        <a href="/profile" class="login-btn"><i class="fa fa-user"></i></a>
-                    </div> --}}
-                </div>
-            </div>
-        </div>
-        <div id="mobile-menu-wrap"></div>
-    </div>
-</header>
-
-<!-- Header Section End -->
+</nav>

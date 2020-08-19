@@ -1,80 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8" />
-    <meta name="description" content="Directing Template" />
-    <meta name="keywords" content="Directing, unica, creative, html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>ForestHUB</title>
+  <meta charset="UTF-8" />
+  <meta name="description" content="Directing Template" />
+  <meta name="keywords" content="Directing, unica, creative, html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>ForesTHUB</title>
 
-    <!-- Google Font -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&display=swap"
-      rel="stylesheet"/>
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&display=swap" rel="stylesheet" />
 
-     {{!-- Bootstrap 4 CDN
-   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.0/cosmo/bootstrap.min.css">
-    Font Awesome  CDN
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous"> 
-    --}}
+  {{!-- Announcements resources  --}}
+        <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" rel="stylesheet"/>
+        <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet"/>
 
-    <!-- Css Styles -->
-    <link rel="stylesheet" href="/css/bootstrap.min.css" type="text/css" />
-    <link rel="stylesheet" href="/css/font-awesome.min.css" type="text/css" />
-    <link rel="stylesheet" href="/css/elegant-icons.css" type="text/css" />
-    <link rel="stylesheet" href="/css/flaticon.css" type="text/css" />
-    <link rel="stylesheet" href="/css/nice-select.css" type="text/css" />
-    <link rel="stylesheet" href="/css/barfiller.css" type="text/css" />
-    <link rel="stylesheet" href="/css/magnific-popup.css" type="text/css" />
-    <link rel="stylesheet" href="/css/jquery-ui.min.css" type="text/css" />
-    <link rel="stylesheet" href="/css/owl.carousel.min.css" type="text/css" />
-    <link rel="stylesheet" href="/css/slicknav.min.css" type="text/css" />
-    <link rel="stylesheet" href="/css/style.css" type="text/css" />
+        <!-- Leaflet's -->
+        <link crossorigin="" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" rel="stylesheet"/>
 
-    {{!-- Sign Up and Sign in CSS 
-    <link rel="stylesheet" href="/assets/css/bootstrap.css"  />
-    <link rel="stylesheet" href="/assets/css/login-register.css"  />
-     --}}
-     <link rel="stylesheet" href="/assets/css/main.css">
+        <!-- Estilos -->
+        <link href="/css/Val_anu.css" rel="stylesheet"/>
 
-    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
 
-      
+
+  {{!-- CDN  --}}
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  <!-- Css Styles -->
+  <link rel="stylesheet" href="/css/bootstrap.min.css" type="text/css" />
+  <link rel="stylesheet" href="/css/font-awesome.min.css" type="text/css" />
+  <link rel="stylesheet" href="/css/elegant-icons.css" type="text/css" />
+  <link rel="stylesheet" href="/css/flaticon.css" type="text/css" />
+  <link rel="stylesheet" href="/css/nice-select.css" type="text/css" />
+  <link rel="stylesheet" href="/css/barfiller.css" type="text/css" />
+  <link rel="stylesheet" href="/css/magnific-popup.css" type="text/css" />
+  <link rel="stylesheet" href="/css/jquery-ui.min.css" type="text/css" />
+  <link rel="stylesheet" href="/css/owl.carousel.min.css" type="text/css" />
+  <link rel="stylesheet" href="/css/slicknav.min.css" type="text/css" />
+  <link rel="stylesheet" href="/css/style.css" type="text/css" />
+
+  
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+
+
 
 </head>
+
 <body>
-  
-  {{!-- {{>navigation}} --}}
+
+  {{>navigation}}
 
   {{>messages}}
 
   {{>errors}}
 
- 
+
   {{{body}}}
+
+
+  {{!-- Js Announcement  --}}
+  {{!-- <script src="/js/valanu.js">
+        </script> --}}
+        <script crossorigin="anonymous" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" src="https://code.jquery.com/jquery-3.4.1.slim.min.js">
+        </script>
+        <script crossorigin="anonymous" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js">
+        </script>
+        <script crossorigin="anonymous" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js">
+        </script>
+        <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.1/dist/jquery.validate.js">
+        </script>
+
+  <!-- Js Plugins -->
+  <script src="/assets/js/jquery-1.10.2.js"></script>
+  <script src="/assets/js/bootstrap.js"></script>
+  <script src="/assets/js/login-register.js"></script>
+
+  {{!-- Js Plugins site  --}}
+  <script src="/js/bootstrap.min.js"></script>
+  <script src="/js/jquery-3.3.1.min.js"></script>
+  <script src="/js/jquery.nice-select.min.js"></script>
+  <script src="/js/jquery-ui.min.js"></script>
+  <script src="/js/jquery.nicescroll.min.js"></script>
+  <script src="/js/jquery.barfiller.js"></script>
+  <script src="/js/jquery.magnific-popup.min.js"></script>
+  <script src="/js/jquery.slicknav.js"></script>
+  <script src="/js/owl.carousel.min.js"></script>
+  <script src="/js/main.js"></script>
+
   
 
-
-   <!-- Js Plugins -->
-    <script src="/assets/js/jquery-1.10.2.js"></script>
-    <script src="/assets/js/bootstrap.js"></script>
-    <script src="/assets/js/login-register.js"></script>
-
-    <script src="/js/jquery-3.3.1.min.js"></script>
-    <script src="/js/bootstrap.min.js"></script>
-    <script src="/js/jquery.nice-select.min.js"></script>
-    <script src="/js/jquery-ui.min.js"></script>
-    <script src="/js/jquery.nicescroll.min.js"></script>
-    <script src="/js/jquery.barfiller.js"></script>
-    <script src="/js/jquery.magnific-popup.min.js"></script>
-    <script src="/js/jquery.slicknav.js"></script>
-    <script src="/js/owl.carousel.min.js"></script>
-    <script src="/js/main.js"></script>
-
-      {{!-- Bootstrap 4 CDN 
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script> --}}
 </body>
+
 </html>

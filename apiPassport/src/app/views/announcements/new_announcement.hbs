@@ -1,0 +1,121 @@
+<div class="row">
+    <div class="col-md-4 mx-auto my-4">
+        <div class="card">
+            <div class="card-header text-center">
+                Create new announcement
+            </div>
+            <div class="card-body">
+                <form action="/announcements/new_announcement" method="POST">
+                    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4">
+                        <!--Parte del titulo-->
+                        <div class="form-group col-md-6">
+                            <label for="Titulo">Title</label>
+                            <input class="form-control" name="title" placeholder="Enter your title" required=""
+                                type="text" />
+                        </div>
+                        <!--Parte de subir la imagen -->
+                        {{!-- <div class="form-group col-md-6">
+                        <label>
+                            Image of announcement
+                        </label>
+                        <input accept="image/*" id="imagen" name="imagen" type="file" />
+                    </div> --}}
+
+                        <!--Parte de rellenar la categoria -->
+                        <div class="form-group col-md-12">
+
+                            <label for="category">Choose a category</label>
+                            <select id="category" name="category">
+                                <option value="5f3d301943ddf04948837c17">Manure</option>
+                                <option value="5f3d303d43ddf04948837c18">Plants</option>
+                                <option value="5f3d304c43ddf04948837c19">Fertilizer</option>
+                                <option value="5f3d305b43ddf04948837c1a">Materas</option>
+                                <option value="5f3d306643ddf04948837c1b">Utilities</option>
+                                <option value="5f3d307543ddf04948837c1c">Cannabis</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <!--Parte para subir el contacto -->
+                    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4">
+                        {{!-- <div class="form-group col-md-6">
+                        <label for="Contacto">
+                            Contact
+                        </label>
+                        <input class="form-control" id="Contacto" name="Contacto"
+                            placeholder="Ingrese su número de celular" required="" size="10" type="number">
+                        <!-- <div class="valid-feedback">Valid.</div> -->
+                        <div class="invalid-feedback">
+                            Por favor ingrese su número de celular
+                        </div>
+                        </input>
+                    </div> --}}
+                        <!--Parte para rellenar el precio -->
+                        <div class="form-group col-md-6">
+                            <label for="Precio">Price</label>
+                            <input class="form-control" id="Precio" name="price" placeholder="Enter price" required=""
+                                type="number" />
+                        </div>
+                    </div>
+
+                    <!--Parte para colocar la descripición del anuncio -->
+                    <div class="form-group">
+                        <label for="Descripcion">Description of announcement</label>
+                        <textarea class="form-control" id="Descripcion" name="description"
+                            placeholder="Enter your description" required="" type="textarea"></textarea>
+                    </div>
+
+                    <!-- Mapa - Latitude - Longitude -->
+                    <div class="form-group row row-cols-1 row-cols-sm-2 row-cols-md-4">
+                        <script>
+                            window.addEventListener("load", inicio);
+                            function inicio() {
+                                navigator.geolocation.getCurrentPosition(alExito, alError);
+
+                            }
+                            function alExito(info) {
+                                campoLatitud.value = info.coords.latitude;
+                                campoLongitud.value = info.coords.longitude;
+                            }
+                            function alError(error) {
+                                alert("Hubo un error");
+                            }
+                        </script>
+
+                        <div class="col-md-6 text-center">
+                            <label for="campoLatitud">Latitude</label>
+                            <input class="form-control " id="campoLatitud" name="latitude" />
+                        </div>
+
+                        <div class="col-md-6 text-center">
+                            <label for="campoLongitud">Longitude</label>
+                            <input class="form-control " id="campoLongitud" name="longitude" />
+                        </div>
+
+                    </div>
+
+                    <div class="form-group">
+                        <script crossorigin=""
+                            integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+                            src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js">
+                            </script>
+                        <div id="myMap" style="height: 280px">
+                            <p> </p>
+                        </div>
+                        <script src="/js/map.js"></script>
+                        </br>
+
+                    </div>
+                    <button class="btn btn-primary btn-block" type="submit">
+                        Post
+                    </button>
+                </form>
+            </div>
+            {{!-- <hr> --}}
+            {{!-- <div class="text-center">
+                <p>Do you have an account ? <a href="/users/signin">Sign In</a> </p>
+                <p>Or go <a href="/">Home</a> </p>
+            </div> --}}
+        </div>
+    </div>
+</div>

@@ -7,7 +7,5 @@ const {renderAnnouncement, renderIndex} = require('../controllers/index.controll
 
 router.get('/', renderIndex);
 
-router.get('/anuncios',  renderAnnouncement);
-
 
 module.exports = router;
