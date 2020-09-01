@@ -25,7 +25,7 @@
                     <div class="listing__item">
                       <div
                         class="listing__item__pic set-bg"
-                        data-setbg="img/listing/tomate.jpg"
+                        data-setbg="{{image}}"
                       >
                         <img src="img/listing/semilla.png" alt="" />
                         <div class="listing__item__pic__tag">{{category.name}}</div>
@@ -63,10 +63,11 @@
 
                           </div>
                           <div class="listing__item__text__info__right">
-                            {{state}}
+                            <a href="/announcements/updateAnnouncement/{{_id}}"><i class="fa fa-pencil" aria-hidden="true"></i></a>
                           </div>
                         </div>
                       </div>
+                      <a href="/announcements/delete/{{_id}}" class="btn btn-danger btn-block">Delete Announcement</a>
                     </div>
                   </div>
                     {{/each}}

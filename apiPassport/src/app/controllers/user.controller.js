@@ -3,6 +3,7 @@ usersController = {};
 const passport = require('passport');
 
 const User = require('../models/user');
+const { query } = require('express');
 
 usersController.renderSignUpForm = (req, res) => {
 
@@ -91,8 +92,47 @@ usersController.logout = (req, res) => {
 
 usersController.renderProfile = (req, res ) => { 
     
-    let {_id, name, email, cellphone, password} = req.user;
-    return res.render('users/profile', {_id,name, email, password, cellphone} );
+    let {_id, name, email, cellphone, password, image} = req.user;
+    return res.render('users/profile', {_id,name, email, password, cellphone, image} );
+};
+
+usersController.renderUpdateUser = async (req, res) => {
+    let {id} = req.params;
+    const user = await User.findById(id).lean();
+    res.render('users/update_user', {user});
+};
+
+usersController.updateUser =  (req, res) => {
+
+    let {id} = req.params;
+    let body = req.body;
+
+    if(req.file === undefined){
+        var updateUser = {
+            name: body.name,
+            cellphone: body.cellphone
+        };
+    }else {
+        var updateUser = {
+            name: body.name,
+            cellphone: body.cellphone,
+            image: "/img/uploads/" + req.file.filename
+          };    
+        
+    }
+
+
+     User.findByIdAndUpdate(id, updateUser, {new: true, context:query},
+        (error, updatedUser) => {
+          if (error) return req.flash("error_message", { error });
+    
+          if (!updatedUser) {
+            return req.flash("error_message", "Do not exist this user");
+          }
+    
+          req.flash("success_message", "User updated successfully");
+          return res.redirect("/users/profile");
+        });
 };
 
 module.exports = usersController;

@@ -6,6 +6,8 @@ const express = require('express');
 const exphbs = require('express-handlebars');
 const path = require('path');
 const morgan = require('morgan');
+const multer = require('multer');
+const uuid = require('uuid').v4;
 const bodyParser = require('body-parser');
 const MethodOverride = require('method-override');
 const flash = require('connect-flash');
@@ -37,6 +39,17 @@ app.set('view engine', '.hbs');
 app.use(morgan('dev')); // Dev engine request
 app.use(bodyParser.urlencoded({ extended: false })); // parse application/x-www-form-urlencoded
 app.use(bodyParser.json()); // parse application/json
+app.use(MethodOverride('_method'));
+const storage = multer.diskStorage({  // Multer middleware.
+    destination: path.resolve(__dirname, './app/public/img/uploads'),
+    filename: (req, file, cb, filename)  => {
+        cb(null, uuid() + path.extname(file.originalname))
+
+    }
+});
+app.use(multer({ // Multer app.
+    storage: storage
+}).single('image')); 
 app.use(MethodOverride('_method'));
 app.use(session({
     secret: 'foresthub',

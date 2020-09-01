@@ -9,7 +9,9 @@ const  {
 	signup,
 	signin,
 	renderProfile,
-	logout
+	logout, 
+	renderUpdateUser, 
+	updateUser
 } = require('../controllers/user.controller');
 
 const {isAuthenticated} = require('../helpers/auth');
@@ -20,6 +22,8 @@ router.get('/users/signin' , renderSigninForm);
 router.post('/users/signin' ,signin);
 router.get('/users/profile', isAuthenticated, renderProfile);
 router.get('/users/logout', logout);
+router.get('/users/update/:id', isAuthenticated, renderUpdateUser);
+router.put('/users/update/:id', isAuthenticated, updateUser);
 
 module.exports = router;
 

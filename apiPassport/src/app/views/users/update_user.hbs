@@ -1,0 +1,31 @@
+<div class="row">
+    <div class="col-md-4 mx-auto my-4">
+        <div class="card">
+            <div class="card-header">
+               Update Account
+            </div>
+            <div class="card-body">
+                <form action="/users/update/{{user._id}}?_method=PUT" method="POST" enctype="multipart/form-data">
+                <input type="hidden" name="_method" value="PUT">
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="name" placeholder="Enter your name" value="{{user.name}}">
+                    </div>
+                    <!--Parte de subir la imagen -->
+                        <div class="form-group ">
+                            <div class="custom-file">
+                                <input type="file" class="custom-file-input" id="inputGroupFile02" name="image" />
+
+                                <label class="custom-file-label" for="inputGroupFile02"
+                                    aria-describedby="inputGroupFileAddon02">Choose file</label>
+                            </div>
+                        </div>
+                    <div class="form-group">
+                        <input type="number" class="form-control" name="cellphone" placeholder="Enter your cellphone" value="{{user.cellphone}}">
+                    </div>
+                    <button class="btn btn-primary btn-block">Update</button>
+                </form>
+            </div>
+            <hr>
+        </div>
+    </div>
+</div>

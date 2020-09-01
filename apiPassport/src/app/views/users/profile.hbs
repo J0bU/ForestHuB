@@ -1,5 +1,5 @@
-  {{!-- <body class="ov-hid"> --}}
-    {{!-- <!-- Page Preloder -->
+{{!-- <body class="ov-hid"> --}}
+{{!-- <!-- Page Preloder -->
     <div id="preloder">
       <div class="loader"></div>
     </div>
@@ -42,31 +42,32 @@
         <div id="mobile-menu-wrap"></div>
       </div>
     </header> --}}
-    <!-- Header Section End -->
+<!-- Header Section End -->
 
-    <!-- Filter Begin -->
- 
-   <div class="row">
-    <div class="col-md-4 mx-auto my-5">
-        <div class="card">
-            <div class="card-header text-center">
-                My Profile
-            </div>
-            <img src="/img/hero/private-account.png" class="rounded-circle mx-auto d-block m-4 logo" alt="">
-            <div class="card-body" style="color: #747271;">
-                <strong >id</strong>: {{ _id}}<br>
-                  <strong>Email</strong>: {{email}}<br>
-                  <strong>Password</strong>: {{password}}<br>
-                  <strong>Name</strong>: {{name}}<br>
-                  <strong>Cellphone</strong>: {{cellphone}}<br>
-            </div>
-            <hr>
-					<div class="text-center">
-						<p> This is my profile</p>
-					
-					</div>
+<!-- Filter Begin -->
+
+<div class="row">
+  <div class="col-md-4 mx-auto my-5">
+    <div class="card">
+      <div class="card-header text-center">
+        My Profile
+      </div>
+      <img src="{{image}}" class="rounded-circle mx-auto d-block m-4 logo" alt="">
+      <div class="card-body" style="color: #747271;">
+        <div class="listing__item__text__info__right">
+          <a href="/users/update/{{_id}}"><i class="fa fa-pencil" aria-hidden="true"></i></a>
         </div>
-    </div>
-</div>
+        <strong>id</strong>: {{ _id}}<br>
+        <strong>Email</strong>: {{email}}<br>
+        <strong>Password</strong>: {{password}}<br>
+        <strong>Name</strong>: {{name}}<br>
+        <strong>Cellphone</strong>: {{cellphone}}<br>
+      </div>
+      <hr>
+      <div class="text-center">
+        <p> This is my profile</p>
 
-  
+      </div>
+    </div>
+  </div>
+</div>

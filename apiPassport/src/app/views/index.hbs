@@ -96,7 +96,7 @@
                     <div class="listing__item">
                       <div
                         class="listing__item__pic set-bg"
-                        data-setbg="img/listing/tomate.jpg"
+                        data-setbg="{{image}}"
                       >
                         <img src="img/listing/semilla.png" alt="" />
                         <div class="listing__item__pic__tag">{{category.name}}</div>
@@ -126,13 +126,14 @@
                         <div class="listing__item__text__info">
                           <div class="listing__item__text__info__left">
                             <img src="img/listing/semillapeque.png" alt="" />
-                            <span>{{category.name}}</span>
+                            <span>Disponible</span>
                           </div>
                           <div class="listing__item__text__info__right">
                             {{state}}
                           </div>
                         </div>
                       </div>
+                            <a href="/announcements/view/{{_id}}" class="btn btn-primary btn-block">View</a>
                     </div>
                    
                   </div>
