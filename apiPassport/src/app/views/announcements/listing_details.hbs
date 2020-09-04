@@ -1,74 +1,67 @@
-    <!-- Listing Section Begin -->
-    <section
-      class="listing-hero set-bg"
-      data-setbg="/img/listing/details/header.jpg"
-    >
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-8">
-            <div class="listing__hero__option">
-              <div class="listing__hero__icon">
-                <img src="img/listing/details/fertilizante.png" alt="" />
-              </div>
-              <div class="listing__hero__text">
-                <h2>{{announcement.title}}</h2>
-                <div class="listing__hero__widget">
-                  <div class="listing__hero__widget__rating">
-                    <span class="icon_star"></span>
-                    <span class="icon_star"></span>
-                    <span class="icon_star"></span>
-                    <span class="icon_star"></span>
-                    <span class="icon_star-half_alt"></span>
-                  </div>
-                </div>
-              </div>
-            </div>
+<!-- Listing Section Begin -->
+<section class="listing-hero set-bg" data-setbg="/img/listing/details/header.jpg">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8">
+        <div class="listing__hero__option">
+          <div class="listing__hero__icon">
+            <img src="img/listing/details/fertilizante.png" alt="" />
           </div>
-          <div class="col-lg-4">
-            
+          <div class="listing__hero__text">
+            <h2>{{announcement.title}}</h2>
+            <div class="listing__hero__widget">
+              <div class="listing__hero__widget__rating">
+                <span class="icon_star"></span>
+                <span class="icon_star"></span>
+                <span class="icon_star"></span>
+                <span class="icon_star"></span>
+                <span class="icon_star-half_alt"></span>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </section>
-    <!-- Listing Section End -->
+      <div class="col-lg-4">
 
-    <!-- Listing Details Section Begin -->
-    <section class="listing-details spad">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-8">
-            <div class="listing__details__text">
-              <div class="listing__details__about">
-                <h4>Description</h4>
-                <p>{{announcement.description}}</p>
+      </div>
+    </div>
+  </div>
+  </div>
+</section>
+<!-- Listing Section End -->
+
+<!-- Listing Details Section Begin -->
+<section class="listing-details spad">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8">
+        <div class="listing__details__text">
+          <div class="listing__details__about">
+            <h4>Description</h4>
+            <p>{{announcement.description}}</p>
+          </div>
+          <div class="listing__details__gallery">
+
+            <div class="listing__details__gallery__pic">
+              <div class="listing__details__gallery__item">
+                <img class="listing__details__gallery__item__large" src="{{announcement.image}}" alt="" />
+
               </div>
-              <div class="listing__details__gallery">
-                
-                <div class="listing__details__gallery__pic">
-                  <div class="listing__details__gallery__item">
-                    <img
-                      class="listing__details__gallery__item__large"
-                      src="{{announcement.image}}"
-                      alt=""
-                    />
-                        
-                  </div>
-                  
-                </div>
-              </div>
-              
-            
-             
+
             </div>
           </div>
-          <div class="col-lg-4">
-            <div class="listing__sidebar">
-              <div class="listing__sidebar__contact">
-                {{!-- <div class="listing__sidebar__contact__map"> --}}
-                    <h4>Posted at:</h4>
-                    <img src="{{announcement.user.image}}" class="rounded-circle mx-auto d-block m-4 logo" alt="">
-                  {{!-- <iframe
+
+
+
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <div class="listing__sidebar">
+          <div class="listing__sidebar__contact">
+            {{!-- <div class="listing__sidebar__contact__map"> --}}
+            <h4>Posted at:</h4>
+            <img src="{{announcement.user.image}}" class="rounded-circle mx-auto d-block m-4 logo" alt="">
+            {{!-- <iframe
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d24168.833995532765!2d-74.79633710628465!3d40.78172222265886!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c384de7a5300b9%3A0x8afc61979217d49d!2sLong%20Valley%2C%20NJ%2007853%2C%20USA!5e0!3m2!1sen!2sbd!4v1586852528126!5m2!1sen!2sbd"
                     height="200"
                     style="border: 0;"
@@ -76,116 +69,113 @@
                     aria-hidden="false"
                     tabindex="0"
                   ></iframe> --}}
-                  {{!-- <img src="img/listing/details/map-icon.png" alt="" /> --}}
-                {{!-- </div> --}}
-                <div class="listing__sidebar__contact__text">
-                  <h4>Owner</h4>
-                  <ul>
-                    <li>
-                        <span class="icon_profile"></span> {{announcement.user.name}}
-                      </li>
-                    <li>
-                      <span class="icon_pin_alt"></span> {{announcement.latitude}} {{announcement.longitude}}
-                    </li>
-                    <li><span class="icon_phone"></span> (+57) {{announcement.user.cellphone}}</li>
-                    <li>
-                      <span class="icon_mail_alt"></span>
-                      {{announcement.user.email}}
-                    </li>
-                   
-                  </ul>
-                 
-                </div>
-              </div>
-              <div class="listing__sidebar__working__hours">
-                <h4>Price</h4>
-                <ul>
-                  <li> $ {{announcement.price}} </li>
-                  
-                </ul>
-              </div>
+            {{!-- <img src="img/listing/details/map-icon.png" alt="" /> --}}
+            {{!-- </div> --}}
+            <div class="listing__sidebar__contact__text">
+              <h4>Owner</h4>
+              <ul>
+                <li>
+                  <span class="icon_profile"></span> {{announcement.user.name}}
+                </li>
+                <li>
+                  <span class="icon_pin_alt"></span> {{announcement.latitude}} {{announcement.longitude}}
+                </li>
+                <li><span class="icon_phone"></span> (+57) {{announcement.user.cellphone}}</li>
+                <li>
+                  <span class="icon_mail_alt"></span>
+                  {{announcement.user.email}}
+                </li>
+
+              </ul>
+
             </div>
+          </div>
+          <div class="listing__sidebar__working__hours">
+            <h4>Price</h4>
+            <ul>
+              <li> $ {{announcement.price}} </li>
+
+            </ul>
           </div>
         </div>
       </div>
-    </section>
-    <!-- Listing Details Section End -->
+    </div>
+  </div>
+</section>
+<!-- Listing Details Section End -->
 
-    <!-- Newslatter Section Begin -->
- 
-    <!-- Newslatter Section End -->
+<!-- Newslatter Section Begin -->
 
-    <!-- Footer Section Begin -->
-    <footer class="footer">
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-3 col-md-6">
-              <div class="footer__about">
-                <p>
-                  la comunidad forestHUB esta para apoyar el autocultivo
-                  responsable de calquier tipo de planta y presta sus servicios
-                  para que las personas puedan hacer un comercio mucho más
-                  sencillo y seguro.
-                </p>
+<!-- Newslatter Section End -->
+
+<!-- Footer Section Begin -->
+<footer class="footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-3 col-md-6">
+        <div class="footer__about">
+          <p>
+            The ForesTHUB community is to support responsible self-cultivation of any type of plant and provides its
+            services so that people can do a much simpler and safer trade
+          </p>
+        </div>
+      </div>
+      <div class="col-lg-4 offset-lg-1 col-md-6">
+        <div class="footer__address">
+          <ul>
+            <li>
+              <span>Customer service:</span>
+              <p>(+57) 01800-678-910</p>
+            </li>
+            <li>
+              <span>Email:</span>
+              <p>imforesthub@gmail.com</p>
+            </li>
+            <li>
+              <span>Power by:</span>
+              <p>J0bU</p>
+            </li>
+            <li>
+              <span>Follow Us:</span>
+              <div class="footer__social">
+                <a href="#"><i class="fa fa-facebook"></i></a>
+                <a href="#"><i class="fa fa-instagram"></i></a>
+                <a href="#"><i class="fa fa-twitter"></i></a>
               </div>
-            </div>
-            <div class="col-lg-4 offset-lg-1 col-md-6">
-              <div class="footer__address">
-                <ul>
-                  <li>
-                    <span>Servicio al cliente:</span>
-                    <p>(+57) 01800-678-910</p>
-                  </li>
-                  <li>
-                    <span>Email:</span>
-                    <p>soyforesthub@gmail.com</p>
-                  </li>
-                  <li>
-                    <span>power by:</span>
-                    <p>wedHub</p>
-                  </li>
-                  <li>
-                    <span>Siguenos:</span>
-                    <div class="footer__social">
-                      <a href="#"><i class="fa fa-facebook"></i></a>
-                      <a href="#"><i class="fa fa-instagram"></i></a>
-                      <a href="#"><i class="fa fa-twitter"></i></a>
-                    </div>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div class="col-lg-3 offset-lg-1 col-md-6">
-              <div class="footer__widget">
-                <ul>
-                  <li><a href="#">Semillas</a></li>
-                  <li><a href="#">Abono</a></li>
-                  <li><a href="#">Plantas</a></li>
-                  <li><a href="#">Fertilizantes</a></li>
-                  <li><a href="#">Materas</a></li>
-                  <li><a href="#">Utilidades</a></li>
-                  <li><a href="#">Canabis</a></li>
-                </ul>
-                <ul>
-                  <li><a href="#">Registrarse</a></li>
-                  <li><a href="#">Ingresar</a></li>
-                  <li><a href="#">Publicar anuncio</a></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-lg-12">
-              <div class="footer__copyright">
-                <div class="footer__copyright__text"></div>
-                <div class="footer__copyright__links">
-                  <a href="#">Terminos y condiciones</a>
-                  <a href="#">Politicas de privacidad</a>
-                  <a href="#">politicas de cookies</a>
-                </div>
-              </div>
-            </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-lg-3 offset-lg-1 col-md-6">
+        <div class="footer__widget">
+          <ul>
+            <li><a href="#">Seeds</a></li>
+            <li><a href="#">Manure</a></li>
+            <li><a href="#">Plants</a></li>
+            <li><a href="#">Fertilizer</a></li>
+            <li><a href="#">Flowers Pots</a></li>
+            <li><a href="#">Utilities</a></li>
+            <li><a href="#">Cannabis</a></li>
+          </ul>
+          <ul>
+            <li><a href="#">Sign Up</a></li>
+            <li><a href="#">Sign In</a></li>
+            <li><a href="#">Post announcement</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="footer__copyright">
+          <div class="footer__copyright__text"></div>
+          <div class="footer__copyright__links">
+            <a href="#">Terms and conditions</a>
+            <a href="#">Policies and privacy</a>
+            <a href="#">Policies of cookies</a>
           </div>
         </div>
-      </footer>
-
+      </div>
+    </div>
+  </div>
+</footer>

@@ -1,244 +1,227 @@
-
-    <!-- Hero Section Begin -->
-    <section class="hero set-bg" data-setbg="img/hero/hero-bg.jpg">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-12">
-            <div class="hero__text">
-              <div class="section-title">
-                <h1>ForesTHUB</h1>
-                <p></p>
-              </div>
-              <div class="hero__search__form">
-                <form action="#">
-                  <input type="text" placeholder="Search..." />
-                  <div class="select__option">
-                    <select>
-                      <option value="">Choose Category</option>
-                    </select>
-                  </div>
-                  <div class="select__option">
-                    <select>
-                      <option value="">Choose location</option>
-                    </select>
-                  </div>
-                  <button type="submit">Let's explore</button>
-                </form>
-              </div>
-              <ul class="hero__categories__tags">
-                <li>
-                  <a href="#"
-                    ><img src="img/hero/semilla.png" alt="" /> Seeds</a
-                  >
-                </li>
-                <li>
-                  <a href="#"><img src="img/hero/abono.png" alt="" /> Manure</a>
-                </li>
-                <li>
-                  <a href="#"
-                    ><img src="img/hero/plantas.png" alt="" /> Plants</a
-                  >
-                </li>
-                <li>
-                  <a href="#"
-                    ><img src="img/hero/fertilizante.png" alt="" />
-                    Fertilizer</a
-                  >
-                </li>
-                <li>
-                  <a href="#"
-                    ><img src="img/hero/matera.png" alt="" /> Flower Pots</a
-                  >
-                </li>
-                <li>
-                  <a href="#"
-                    ><img src="img/hero/utilidades.png" alt="" /> Utilities</a
-                  >
-                </li>
-                <li>
-                  <a href="#"
-                    ><img src="img/hero/hierba.png" alt="" /> Cannabis
-                  </a>
-                </li>
-              </ul>
-            </div>
+<!-- Hero Section Begin -->
+<section class="hero set-bg" data-setbg="img/hero/hero-bg.jpg">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="hero__text">
+          <div class="section-title">
+            <h1>ForesTHUB</h1>
+            <p></p>
           </div>
+          <div class="hero__search__form">
+            <form action="#">
+              <input type="text" placeholder="Search..." />
+              <div class="select__option">
+                <select>
+                  <option value="">Choose Category</option>
+                </select>
+              </div>
+              <div class="select__option">
+                <select>
+                  <option value="">Choose location</option>
+                </select>
+              </div>
+              <button type="submit">Let's explore</button>
+            </form>
+          </div>
+          <ul class="hero__categories__tags">
+            <li>
+              <a href="#"><img src="img/hero/semilla.png" alt="" /> Seeds</a>
+            </li>
+            <li>
+              <a href="#"><img src="img/hero/abono.png" alt="" /> Manure</a>
+            </li>
+            <li>
+              <a href="#"><img src="img/hero/plantas.png" alt="" /> Plants</a>
+            </li>
+            <li>
+              <a href="#"><img src="img/hero/fertilizante.png" alt="" />
+                Fertilizer</a>
+            </li>
+            <li>
+              <a href="#"><img src="img/hero/matera.png" alt="" /> Flower Pots</a>
+            </li>
+            <li>
+              <a href="#"><img src="img/hero/utilidades.png" alt="" /> Utilities</a>
+            </li>
+            <li>
+              <a href="#"><img src="img/hero/hierba.png" alt="" /> Cannabis
+              </a>
+            </li>
+          </ul>
         </div>
       </div>
-    </section>
-    <!-- Hero Section End -->
+    </div>
+  </div>
+</section>
+<!-- Hero Section End -->
 
-    <!-- Categories Section Begin -->
+<!-- Categories Section Begin -->
 
-    <!-- Most Search Section Begin -->
-    <section class="most-search spad">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-12">
-            <div class="section-title">
-              <h2>Our best announcements</h2>
-              <p>
-                In this section you will find the best announcements
-              </p>
-            </div>
-          </div>
+<!-- Most Search Section Begin -->
+<section class="most-search spad">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="section-title">
+          <h2>Our best announcements</h2>
+          <p>
+            In this section you will find the best announcements
+          </p>
         </div>
+      </div>
+    </div>
 
-        <!-- comienzo del div parte de las ofertas-->
-        <div class="row">
-          <!-- comienzo del div parte de las ofertas-->
-          <div class="col-lg-12">
-            <div class="tab-content">
-              <div class="tab-pane active" id="tabs-1" role="tabpanel">
-                <div class="row">
-                  {{#each announcements}}
-                  <div class="col-lg-4 col-md-6">
-                    <div class="listing__item">
-                      <div
-                        class="listing__item__pic set-bg"
-                        data-setbg="{{image}}"
-                      >
-                        <img src="img/listing/semilla.png" alt="" />
-                        <div class="listing__item__pic__tag">{{category.name}}</div>
-                      </div>
-                      <div class="listing__item__text">
-                        <div class="listing__item__text__inside">
-                          <h5>{{title}}</h5>
-                          <div class="listing__item__text__rating">
-                            <div class="listing__item__rating__star">
-                              <span class="icon_star"></span>
-                              <span class="icon_star"></span>
-                              <span class="icon_star"></span>
-                              <span class="icon_star"></span>
-                              <span class="icon_star-half_alt"></span>
-                            </div>
-                            <h6>${{price}}</h6>
-                          </div>
-                          <ul>
-                            <li>
-                              <span class="icon_pin_alt"></span> {{latitude}}  {{longitude}}
-                            </li>
-                            <li>
-                              <span class="icon_phone"></span> {{user.name}}
-                            </li>
-                          </ul>
+    <!-- comienzo del div parte de las ofertas-->
+    <div class="row">
+      <!-- comienzo del div parte de las ofertas-->
+      <div class="col-lg-12">
+        <div class="tab-content">
+          <div class="tab-pane active" id="tabs-1" role="tabpanel">
+            <div class="row">
+              {{#each announcements}}
+              <div class="col-lg-4 col-md-6">
+                <div class="listing__item">
+                  <div class="listing__item__pic set-bg" data-setbg="{{image}}">
+                    <img src="img/listing/semilla.png" alt="" />
+                    <div class="listing__item__pic__tag">{{category.name}}</div>
+                  </div>
+                  <div class="listing__item__text">
+                    <div class="listing__item__text__inside">
+                      <h5>{{title}}</h5>
+                      <div class="listing__item__text__rating">
+                        <div class="listing__item__rating__star">
+                          <span class="icon_star"></span>
+                          <span class="icon_star"></span>
+                          <span class="icon_star"></span>
+                          <span class="icon_star"></span>
+                          <span class="icon_star-half_alt"></span>
                         </div>
-                        <div class="listing__item__text__info">
-                          <div class="listing__item__text__info__left">
-                            <img src="img/listing/semillapeque.png" alt="" />
-                            <span>Disponible</span>
-                          </div>
-                          <div class="listing__item__text__info__right">
-                            {{state}}
-                          </div>
-                        </div>
+                        <h6>${{price}}</h6>
                       </div>
-                            <a href="/announcements/view/{{_id}}" class="btn btn-primary btn-block">View</a>
+                      <ul>
+                        <li>
+                          <span class="icon_pin_alt"></span> {{latitude}} {{longitude}}
+                        </li>
+                        <li>
+                          <span class="icon_phone"></span> {{user.name}}
+                        </li>
+                      </ul>
                     </div>
-                   
+                    <div class="listing__item__text__info">
+                      <div class="listing__item__text__info__left">
+                        <img src="img/listing/semillapeque.png" alt="" />
+                        <span>Available</span>
+                      </div>
+                      <div class="listing__item__text__info__right">
+                        {{state}}
+                      </div>
+                    </div>
                   </div>
-                   {{/each}}
-                
+                  <a href="/announcements/view/{{_id}}" class="btn btn-primary btn-block">View</a>
+                </div>
+
               </div>
+              {{/each}}
+
             </div>
           </div>
         </div>
       </div>
-    </section>
-    <!-- Most Search Section End -->
+    </div>
+</section>
+<!-- Most Search Section End -->
 
-    <!-- Work Section Begin -->
+<!-- Work Section Begin -->
 
-    <!-- Work Section End -->
+<!-- Work Section End -->
 
-    <!-- Feature Location Section Begin -->
+<!-- Feature Location Section Begin -->
 
-    <!-- Feature Location Section End -->
+<!-- Feature Location Section End -->
 
-    <!-- Testimonial Section Begin -->
+<!-- Testimonial Section Begin -->
 
-    <!-- Testimonial Section End -->
+<!-- Testimonial Section End -->
 
-    <!-- Blog Section Begin -->
+<!-- Blog Section Begin -->
 
-    <!-- Blog Section End -->
+<!-- Blog Section End -->
 
-    <!-- Newslatter Section Begin -->
+<!-- Newslatter Section Begin -->
 
-    <!-- Newslatter Section End -->
+<!-- Newslatter Section End -->
 
-    <!-- Footer Section Begin -->
-    <footer class="footer">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-3 col-md-6">
-            <div class="footer__about">
-              <p>
-                la comunidad forestHUB esta para apoyar el autocultivo
-                responsable de calquier tipo de planta y presta sus servicios
-                para que las personas puedan hacer un comercio mucho más
-                sencillo y seguro.
-              </p>
-            </div>
-          </div>
-          <div class="col-lg-4 offset-lg-1 col-md-6">
-            <div class="footer__address">
-              <ul>
-                <li>
-                  <span>Servicio al cliente:</span>
-                  <p>(+57) 01800-678-910</p>
-                </li>
-                <li>
-                  <span>Email:</span>
-                  <p>soyforesthub@gmail.com</p>
-                </li>
-                <li>
-                  <span>power by:</span>
-                  <p>wedHub</p>
-                </li>
-                <li>
-                  <span>Siguenos:</span>
-                  <div class="footer__social">
-                    <a href="#"><i class="fa fa-facebook"></i></a>
-                    <a href="#"><i class="fa fa-instagram"></i></a>
-                    <a href="#"><i class="fa fa-twitter"></i></a>
-                  </div>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-lg-3 offset-lg-1 col-md-6">
-            <div class="footer__widget">
-              <ul>
-                <li><a href="#">Semillas</a></li>
-                <li><a href="#">Abono</a></li>
-                <li><a href="#">Plantas</a></li>
-                <li><a href="#">Fertilizantes</a></li>
-                <li><a href="#">Materas</a></li>
-                <li><a href="#">Utilidades</a></li>
-                <li><a href="#">Canabis</a></li>
-              </ul>
-              <ul>
-                <li><a href="#">Registrarse</a></li>
-                <li><a href="#">Ingresar</a></li>
-                <li><a href="#">Publicar anuncio</a></li>
-              </ul>
-            </div>
-          </div>
+<!-- Footer Section Begin -->
+<footer class="footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-3 col-md-6">
+        <div class="footer__about">
+          <p>
+            The ForesTHUB community is to support responsible self-cultivation of any type of plant and provides its
+            services so that people can do a much simpler and safer trade
+          </p>
         </div>
-        <div class="row">
-          <div class="col-lg-12">
-            <div class="footer__copyright">
-              <div class="footer__copyright__text"></div>
-              <div class="footer__copyright__links">
-                <a href="#">Terminos y condiciones</a>
-                <a href="#">Politicas de privacidad</a>
-                <a href="#">politicas de cookies</a>
+      </div>
+      <div class="col-lg-4 offset-lg-1 col-md-6">
+        <div class="footer__address">
+          <ul>
+            <li>
+              <span>Customer service:</span>
+              <p>(+57) 01800-678-910</p>
+            </li>
+            <li>
+              <span>Email:</span>
+              <p>imforesthub@gmail.com</p>
+            </li>
+            <li>
+              <span>Power by:</span>
+              <p>J0bU</p>
+            </li>
+            <li>
+              <span>Follow us:</span>
+              <div class="footer__social">
+                <a href="#"><i class="fa fa-facebook"></i></a>
+                <a href="#"><i class="fa fa-instagram"></i></a>
+                <a href="#"><i class="fa fa-twitter"></i></a>
               </div>
-            </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-lg-3 offset-lg-1 col-md-6">
+        <div class="footer__widget">
+          <ul>
+            <li><a href="#">Seeds</a></li>
+            <li><a href="#">Manure</a></li>
+            <li><a href="#">Plants</a></li>
+            <li><a href="#">Fertilizer</a></li>
+            <li><a href="#">Flower Pots</a></li>
+            <li><a href="#">Utilities</a></li>
+            <li><a href="#">Cannabis</a></li>
+          </ul>
+          <ul>
+            <li><a href="#">Sign Up</a></li>
+            <li><a href="#">Sign In</a></li>
+            <li><a href="#">Post announcement</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="footer__copyright">
+          <div class="footer__copyright__text"></div>
+          <div class="footer__copyright__links">
+            <a href="#">Terms and conditions</a>
+            <a href="#">Policies and privacy</a>
+            <a href="#">Policies of cookies</a>
           </div>
         </div>
       </div>
-    </footer>
-    <!-- Footer Section End -->
+    </div>
+  </div>
+</footer>
+<!-- Footer Section End -->
 </body>
